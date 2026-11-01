@@ -1,0 +1,14 @@
+protocol "Dilution series and readout"
+labware plate96 (max well volume 200 uL)
+
+step dilute
+  add 50 uL "Buffer A" to wells A2-A6
+  add 100 uL "Sample S1" to well A1
+  serial transfer 50 uL from A1 to A6, mixing 3 times at each well
+
+step develop
+  add 100 uL "Reagent B" to wells A1-A6
+  incubate 15 min at 37 C
+
+step read
+  measure absorbance at 450 nm in wells A1-A6

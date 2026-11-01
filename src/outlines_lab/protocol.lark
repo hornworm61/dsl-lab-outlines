@@ -1,0 +1,14 @@
+start: "protocol " STRING _NL "labware plate96 (max well volume " INT " uL)" _NL _NL step (_NL step)* _NL?
+step: "step " NAME _NL command+
+?command: add | transfer | incubate | measure
+add: "  add " INT " uL " STRING " to " targets _NL
+transfer: "  serial transfer " INT " uL from " WELL " to " WELL ", mixing " INT " times at each well" _NL
+incubate: "  incubate " INT " min at " INT " C" _NL
+measure: "  measure absorbance at " INT " nm in " targets _NL
+?targets: "well " WELL -> single
+        | "wells " WELL "-" WELL -> span
+STRING: /"[^"\n\r\\]{1,60}"/
+NAME: /[a-z][a-z0-9_]{0,31}/
+WELL: /[A-H](1[0-2]|[1-9])/
+INT: /0|[1-9][0-9]{0,5}/
+_NL: "\n"

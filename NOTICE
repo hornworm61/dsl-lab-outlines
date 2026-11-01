@@ -1,0 +1,70 @@
+Outlines Lab - licensing and attribution
+======================================
+
+Original project work
+---------------------
+
+Copyright (c) 2026 Steven Livengood.
+
+Original implementation, grammar, tests, and documentation contributions are
+licensed under the MIT License in LICENSE. This grant does not replace the
+licenses of the source material and dependencies identified below.
+
+Adapted DSL example and source material
+--------------------------------------
+
+Steve Livengood, "DSL-mediated Agents: A Definition" (2026).
+Copyright (c) 2026 Steve Livengood.
+Publication: https://doi.org/10.5281/zenodo.23587494
+Author's source:
+https://github.com/thirdrailsoftware/dsl-mediated-agents/blob/main/definition.md
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+License terms: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The worked example is reproduced or adapted in examples/01_overflow.lab,
+examples/02_wrong_intent.lab, examples/03_two_fold.lab, and the corresponding
+example passages and fixtures in the documentation and tests. The underlying
+source material retains its CC BY 4.0 terms and attribution requirements;
+it is not relicensed solely under MIT.
+
+Changes include the mechanical-repair variant, an executable grammar,
+volume/sample accounting, explicit fold checks, and a semantic-feedback
+generation loop. The accompanying discussion clarifies the distinct Text2DSL
+study populations and the final-readout effect of retaining the last transfer
+in A6. These adaptations and interpretations do not update the published
+source or imply endorsement by its author.
+
+Outlines
+--------
+
+Project: https://github.com/dottxt-ai/outlines
+Developed by .txt and the Outlines contributors.
+Copyright 2023- The Outlines developers
+License: Apache License, Version 2.0.
+Reference copy of upstream license and copyright notice:
+LICENSES/Outlines-Apache-2.0.txt
+
+The demo uses Outlines as a separately installed dependency. No Outlines
+implementation or upstream README snapshot is distributed by this project.
+The reference license copy does not change this project's MIT license.
+
+Recommended upstream research citation:
+Brandon T. Willard and Remi Louf (2023),
+"Efficient Guided Generation for Large Language Models."
+https://arxiv.org/abs/2307.09702
+
+Other dependencies and models
+-----------------------------
+
+Lark, LLGuidance, NumPy, optional Transformers/PyTorch/tokenizer packages,
+and their transitive dependencies retain their respective licenses and
+notices. They are installed separately, not sublicensed under this project's
+MIT grant. Preserve their bundled license and NOTICE files if redistributing
+their distributions or a bundled environment; this notice is not a complete
+license inventory for such a bundle.
+
+No pretrained model weights or pretrained tokenizer assets are distributed
+by this project. Users supplying these assets must comply with their
+respective licenses. Tiny integration-test weights and BPE tokenizer files
+are synthesized locally, not copied from a pretrained model.

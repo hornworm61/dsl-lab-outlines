@@ -1,0 +1,47 @@
+# Instructions
+
+## Git Command Restrictions
+
+- Do not run Git commands unless the user specifically asks for a Git operation.
+- A request to use Git does not authorize state changes. Before any Git command that
+  changes repository state, explain the exact operation and obtain separate, explicit
+  confirmation for it.
+- State-changing commands include staging, committing, checkout or switch, reset, clean,
+  stash, branch creation or deletion, cherry-pick, rebase, merge, and apply.
+- Never infer confirmation from a general request, prior approval, or the presence of
+  existing changes. If confirmation is not given, do not run the state-changing command.
+- Do not run `git diff --check`; it is not useful here and may not reflect the user's changes.
+
+## Required Markdown Lint
+
+- After any Markdown file change, run `npx markdownlint-cli2` on every changed Markdown file.
+- Do not substitute another Markdown checker. Report if the required lint command cannot run.
+
+## 🚨 CRITICAL: Markdown Creation Checklist 🚨
+
+**BEFORE creating or editing ANY markdown file, verify EVERY item:**
+
+- [ ] ALL code blocks have language specifiers (\`\`\`python, \`\`\`bash, \`\`\`text) - NEVER use \`\`\` alone
+- [ ] ALL lists have blank line BEFORE the first item
+- [ ] ALL lists have blank line AFTER the last item
+- [ ] Ordered lists numbered sequentially (1, 2, 3, 4) - NO gaps or wrong numbers
+- [ ] NO duplicate heading text at the same level
+- [ ] Only ONE H1 (\`#\`) per document
+- [ ] Line length ≤ 120 characters (break long lines across multiple lines)
+- [ ] Tables use compact format: \`| column |\` with spaces around pipes
+
+**During editing, validate only requested files using approved, available tooling:**
+
+```bash
+npx markdownlint-cli2 "path/to/file.md"
+```
+
+Do not search outside authorized directories or silently install tools. If npx is unavailable or fails, state
+that Markdown lint was not run. Apply automatic fixes using `--fix`
+
+**Common mistakes that cause 90% of linting errors:**
+
+1. Forgetting blank line before list (text immediately followed by \`-\` or \`1.\`)
+2. Forgetting blank line after list (list immediately followed by text)
+3. Duplicate heading names (add qualifiers or use subheadings)
+4. Code blocks without language (use \`\`\`text if unsure)
